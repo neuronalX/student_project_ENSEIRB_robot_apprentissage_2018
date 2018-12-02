@@ -44,7 +44,7 @@ Sujets / Equipes :
   - Équipe 4.a : Jérémy Bezamat - Thomas Saliba - Yoann
 
 ### **(NEW)** Points BONUS
-Si vous trouvez des *bugs* dans le code le [repository FunkyReservoir]() ou que vous proposez des améliorations par pull/request, vous obtiendrez des points bonus sur votre projet, étant donné que cela contribue à améliorer le code pour tous.
+Si vous trouvez des *bugs* dans le code le [repository FunkyReservoir](https://github.com/neuronalX/FunkyReservoir) ou que vous proposez des améliorations par pull/request, vous obtiendrez des points bonus sur votre projet, étant donné que cela contribue à améliorer le code pour tous.
 
 ### **(NEW)** Rendu du projet
 Le projet sera rendu début janvier (date communiquée plus tard).
