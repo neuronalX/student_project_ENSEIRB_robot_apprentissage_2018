@@ -15,6 +15,7 @@ Pour un même thème, les 2 groupes devront s'arranger entre eux pour ne pas tra
   - (si le corpus est "plutôt petit" et appris en hors-ligne) avec une *cross-validation 10 fold* = on découpe le corpus en 10 *parts* égales, on utilise 9 parts pour entrainer et la 10e pour tester/valider les performances. Puis on fait de même pour toutes les parts et on moyenne le tout.
   - (si le corpus est "plutôt grand" et appris en-ligne) en découpant le corpus en deux parties : une partie pour l'apprentissage (plus grande), et une partie test/validation (plus petite) ; avec une répartition 70/30 par exemple.
   - si vous testez beaucoup d'*hyper-paramètres* (= paramètres non-appris) pour optimiser les performances de vos modèles, idéalement vous devrez séparer le corpus en 3, une pour l'**apprentissage**, une pour la **validation**, et une pour le **test** (*train/validation/test* en Anglais). Vous optimisez les performances de votre modèle en utilisant les ensemble d'apprentissage et de validation, et uniquement à la fin pour utiliser l'ensemble de test pour évaluer les performances "réelles de généralisation" de votre modèle (= sur des données sur lesquelles l'apprentissage n'a pas été optimisé pour).
+  - Voici deux liens pour plus d'explications : [wikipedia](https://en.wikipedia.org/wiki/Training,_validation,_and_test_sets) [stats.stackexchange.com](https://stats.stackexchange.com/questions/19048/what-is-the-difference-between-test-set-and-validation-set)
 - etudier l'effet de différents paramètres (nombre de neurones, rayon spectral, input scaling, leak-rate, ...)
   - sur les performances et comportements obtenus
 - produire des fichiers de sortie (texte, son, image = spectrogramme) selon le projet
@@ -40,16 +41,22 @@ Sujets / Equipes :
   - Équipe 4.a : Jérémy Bezamat - Thomas Saliba - Yoann
 
 ### **(NEW)** Points BONUS
+Si vous trouvez des *bugs* dans le code le [repository FunkyReservoir]() ou que vous proposez des améliorations par pull/request, vous obtiendrez des points bonus sur votre projet, étant donné que cela contribue à améliorer le code pour tous.
 
-### Rendu du projet
+### **(NEW)** Rendu du projet
 Le projet sera rendu début janvier (date communiquée plus tard).
 
 Pour le rendu, vous devrez :
-- créer et m'envoyer l'adresse d'un repository github (il peut être privé, mais vous devrez m'inviter pour que je puisse y accéder)
--
+- créer et m'envoyer l'adresse d'un repository github (il peut être privé, mais vous devrez m'inviter pour que je puisse y accéder).
+- écrire un rapport de 15 à 30 pages (tout inclus, page de garde, figures, bibliographie) décrivant votre travail et fournissant une discussion des résultats obenus et difficultés rencontrées. (N'incluez pas de code dans le rapport, sauf si c'est quelques lignes utiles pour vos explications et la compréhension.)
+
+Après le rendu, vos projets pourront être référencé sur cette page, si vous le souhaitez.
 
 ## **(NEW)** FAQ
+Le FAQ est mis à jour au fur et à mesure que vos questions par email. Pensez à venir le regarder régulièrement.
+
 - "Concernant le sujet de traitement de texte, nous comprenons que nous devons faire apprendre le réseau avec un texte choisi, puis en entrant une certaine lettre, nous aurons des probabilités sur quelle sera la prochaine lettre du mot, est-ce correct ?"
+  - *NB: dans une certaine mesure les réponses pour la tâche TXT sont aussi valables pour la tâche MIDI*
 
     Concernant le sujet de traitement de texte, oui l'idée est de prédire la distribution des prochains caractères.
 
@@ -67,6 +74,7 @@ Pour le rendu, vous devrez :
   - avec un softMax en sortie, et un choix probabiliste pour ne pas générer tout le temps les mêmes suites de caractères
   - les fonctions de cout potentiellement intéressante (cross-entropy, etc.)
 - quels sont les effets d'avoir différents corpus, de différentes tailles, avec des vocabulaire différents ?
+- *NB: dans une certaine mesure les tâches TXT et MIDI ont des points communs, sachez les exploiter.*
 
 ### 2. (MIDI) Prédiction et génération de fichier midi
 - prendre un corpus de fichiers midi d'un certain style (Bach, Mozart, jazz, ...) avec un seul instrument (une seule ligne mélodique) où une seule note est jouée à la fois (c'est à dire pas d'accords)
@@ -76,6 +84,7 @@ Pour le rendu, vous devrez :
   - prédiction/génération simplement sur la durée des notes (rythmique)
 - softmax (idem que pour projet sur le texte)
 - produire le fichier midi, et utiliser une bibliothèque pour automatiquement produire la musique générée
+- *NB: dans une certaine mesure les tâches TXT et MIDI ont des points communs, sachez les exploiter.*
 
 ### 3. (FREQ2WAV) Transformation de frequences en ondes sonores
 - générer un corpus avec toutes les notes d'un piano qui vont générer les fréquences correspondant aux différentes touches
@@ -86,6 +95,8 @@ Pour le rendu, vous devrez :
 - générer les fichiers .json et .numpy contenant les vecteurs d'ondes correspondantes
 - utiliser une bibliothèque pour générer le son correspondant à ces vecteurs d'ondes
 - générer également les images des spectrogrammes correspondant aux sons générés
+- sur la [page d'introduction des ESN de Scholarpedia](http://www.scholarpedia.org/article/Echo_state_network) vous pourrez trouver l'exemple de cette tâche.
+  - Image from www.scholarpedia.org/article/Echo_state_network: [Figure 1: The basic schema of an ESN, illustrated with a tuneable frequency generator task. Solid arrows indicate fixed, random connections; dotted arrows trainable connections.](http://www.scholarpedia.org/w/images/thumb/c/c6/FreqGenSchema.png/500px-FreqGenSchema.png)
 
 ### 4. (WAV2FREQ) Transformation d'ondes en fréquences
 - ce projet correspond à faire "l'inverse" du projet 3. (FREQ2WAV)
