@@ -5,6 +5,8 @@ Projet étudiant pour le cours sur l'Apprentissage Artificiel de l'ENSEIRB/ENSC 
 
 Projets autour du reservoir computing avec l'utilisation de la classe ESN fournie par le repository [FunkyReservoir](https://github.com/neuronalX/FunkyReservoir).
 
+Vous regarder ce [tutoriel jupyter notebook](https://github.com/neuronalX/Reservoir-Jupyter/blob/master/Minimal_ESN_-_FR.ipynb) pour vous aider. De façon général, vous pourrez trouver d'autres tutoriel et outils sur [ce repository](https://github.com/neuronalX/Reservoir-Jupyter).
+
 ## Généralités
 ### Nombre et tailles des groupes
 Il y aura environ 6 groupes d'étudiants, avec pour chaque thème, 2 groupes d'étudiants pour ce thème.
