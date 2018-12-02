@@ -55,6 +55,8 @@ Pour le rendu, vous devrez :
 - créer et m'envoyer l'adresse d'un repository github (il peut être privé, mais vous devrez m'inviter pour que je puisse y accéder).
 - écrire un rapport de 15 à 30 pages (tout inclus, page de garde, figures, bibliographie) décrivant votre travail et fournissant une discussion des résultats obenus et difficultés rencontrées. (N'incluez pas de code dans le rapport, sauf si c'est quelques lignes utiles pour vos explications et la compréhension.)
 
+(Optionnel) Si vous préférez, vous pouvez faire un rapport sous forme jupyter notebook à la place du rapport "normal". Dans ce cas, il y aura de fait beaucoup plus de code "montré" que si c'était un rapport normal.
+
 Après le rendu, vos projets pourront être référencé sur cette page, si vous le souhaitez.
 
 ## **(NEW)** FAQ
