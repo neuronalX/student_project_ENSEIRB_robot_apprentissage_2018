@@ -96,7 +96,7 @@ Le FAQ est mis à jour au fur et à mesure que vos questions par email. Pensez �
 - utiliser une bibliothèque pour générer le son correspondant à ces vecteurs d'ondes
 - générer également les images des spectrogrammes correspondant aux sons générés
 - sur la [page d'introduction des ESN de Scholarpedia](http://www.scholarpedia.org/article/Echo_state_network) vous pourrez trouver l'exemple de cette tâche.
-  - Image from www.scholarpedia.org/article/Echo_state_network: [Figure 1: The basic schema of an ESN, illustrated with a tuneable frequency generator task. Solid arrows indicate fixed, random connections; dotted arrows trainable connections.](http://www.scholarpedia.org/w/images/thumb/c/c6/FreqGenSchema.png/500px-FreqGenSchema.png)
+  - Image from www.scholarpedia.org/article/Echo_state_network: ![Figure 1: The basic schema of an ESN, illustrated with a tuneable frequency generator task. Solid arrows indicate fixed, random connections; dotted arrows trainable connections.](http://www.scholarpedia.org/w/images/thumb/c/c6/FreqGenSchema.png/500px-FreqGenSchema.png)
 
 ### 4. (WAV2FREQ) Transformation d'ondes en fréquences
 - ce projet correspond à faire "l'inverse" du projet 3. (FREQ2WAV)
