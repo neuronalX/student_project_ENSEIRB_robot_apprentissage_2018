@@ -16,8 +16,11 @@ Pour un même thème, les 2 groupes devront s'arranger entre eux pour ne pas tra
   - (si le corpus est "plutôt grand" et appris en-ligne) en découpant le corpus en deux parties : une partie pour l'apprentissage (plus grande), et une partie test/validation (plus petite) ; avec une répartition 70/30 par exemple.
   - si vous testez beaucoup d'*hyper-paramètres* (= paramètres non-appris) pour optimiser les performances de vos modèles, idéalement vous devrez séparer le corpus en 3, une pour l'**apprentissage**, une pour la **validation**, et une pour le **test** (*train/validation/test* en Anglais). Vous optimisez les performances de votre modèle en utilisant les ensemble d'apprentissage et de validation, et uniquement à la fin pour utiliser l'ensemble de test pour évaluer les performances "réelles de généralisation" de votre modèle (= sur des données sur lesquelles l'apprentissage n'a pas été optimisé pour).
   - Voici deux liens pour plus d'explications : [wikipedia](https://en.wikipedia.org/wiki/Training,_validation,_and_test_sets) [stats.stackexchange.com](https://stats.stackexchange.com/questions/19048/what-is-the-difference-between-test-set-and-validation-set)
-- etudier l'effet de différents paramètres (nombre de neurones, rayon spectral, input scaling, leak-rate, ...)
-  - sur les performances et comportements obtenus
+- etudier l'effet des différents paramètres (ci-dessous) :
+  - sur les performances,
+  - et sur les "comportements" obtenus,
+  - paramètres à étudier : nombre de neurones, rayon spectral (*spectral radius*) de la matrice récurrente W, mise à l'échelle de la matrice d'entée Win *input scaling*, "taux de fuite" des neurones (*leak-rate*), paramètre de régularisation (*ridge parameter*), pas d'apprentissage (*learning rate*) si vous utilisez un apprentissage en-ligne ;
+  - (vous pouvez étudier d'autres paramètres en plus si vous le souhaitez).
 - produire des fichiers de sortie (texte, son, image = spectrogramme) selon le projet
 - si vous avez besoin d'apprendre sur de grands corpus (= sur un grand nombre de pas de temps) alos vous pourrez voir que l'apprentissage hors-ligne (*offline*) prendra un temps de plus en plus long (et pourra même "planter" à un moment car la matrice à inverser sera trop grande). Dans ce cas, l'apprentissage en-ligne (*online*) vous permettra d'apprendre des corpus beaucoup plus longs (grossièrement l'apprentissage sera linéaire par rapport aux nombres de pas de temps, contrairement à l'apprentissage hors-ligne). Mais selon la méthode d'apprentissage utiliser (LMS, RLS), cela nécessitera plusieurs *passes* sur le corpus (ou simplement un corpus plus grand si c'est un corpus généré).
 
@@ -90,13 +93,14 @@ Le FAQ est mis à jour au fur et à mesure que vos questions par email. Pensez �
 - générer un corpus avec toutes les notes d'un piano qui vont générer les fréquences correspondant aux différentes touches
   - puis faire des enchainements croissant, décroissant et aléatoires de ces différentes fréquences
 - la tâche peut être faite avec des niveaux de difficulté croissante
-  - d'abord apprendre à générer des ondes pour une seule octave
+  - d'abord apprendre à générer des ondes (= signal prériodique) pour une seule octave
   - puis augmenter jusqu'au nombre d'octaves maximums que le reservoir semble pouvoir apprendre
 - générer les fichiers .json et .numpy contenant les vecteurs d'ondes correspondantes
 - utiliser une bibliothèque pour générer le son correspondant à ces vecteurs d'ondes
 - générer également les images des spectrogrammes correspondant aux sons générés
 - sur la [page d'introduction des ESN de Scholarpedia](http://www.scholarpedia.org/article/Echo_state_network) vous pourrez trouver l'exemple de cette tâche.
-  - Image from www.scholarpedia.org/article/Echo_state_network: ![Figure 1: The basic schema of an ESN, illustrated with a tuneable frequency generator task. Solid arrows indicate fixed, random connections; dotted arrows trainable connections.](http://www.scholarpedia.org/w/images/thumb/c/c6/FreqGenSchema.png/500px-FreqGenSchema.png)
+  - Image provenant de www.scholarpedia.org/article/Echo_state_network (CC BY-NC-SA 3.0) : ![Figure 1: The basic schema of an ESN, illustrated with a tuneable frequency generator task. Solid arrows indicate fixed, random connections; dotted arrows trainable connections.](http://www.scholarpedia.org/w/images/thumb/c/c6/FreqGenSchema.png/500px-FreqGenSchema.png)
 
 ### 4. (WAV2FREQ) Transformation d'ondes en fréquences
 - ce projet correspond à faire "l'inverse" du projet 3. (FREQ2WAV)
+- c'est-à-dire que vous devez prendre en entrée un signal périodique en entrée, et fournir la fréquence de ce signal en sortie.
