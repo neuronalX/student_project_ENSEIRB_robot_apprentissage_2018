@@ -11,10 +11,14 @@ Il y aura environ 6 groupes d'étudiants, avec pour chaque thème, 2 groupes d'�
 Pour un même thème, les 2 groupes devront s'arranger entre eux pour ne pas travailler sur les mêmes corpus et ne pas explorer les mêmes choses.
 
 ### Pour tous les projets
-- tester les performances des modèles en cross-validation 10 fold
+- tester les performances des modèles selon le type de tâche soit:
+  - (si le corpus est "plutôt petit" et appris en hors-ligne) avec une *cross-validation 10 fold* = on découpe le corpus en 10 *parts* égales, on utilise 9 parts pour entrainer et la 10e pour tester/valider les performances. Puis on fait de même pour toutes les parts et on moyenne le tout.
+  - (si le corpus est "plutôt grand" et appris en-ligne) en découpant le corpus en deux parties : une partie pour l'apprentissage (plus grande), et une partie test/validation (plus petite) ; avec une répartition 70/30 par exemple.
+  - si vous testez beaucoup d'*hyper-paramètres* (= paramètres non-appris) pour optimiser les performances de vos modèles, idéalement vous devrez séparer le corpus en 3, une pour l'**apprentissage**, une pour la **validation**, et une pour le **test** (*train/validation/test* en Anglais). Vous optimisez les performances de votre modèle en utilisant les ensemble d'apprentissage et de validation, et uniquement à la fin pour utiliser l'ensemble de test pour évaluer les performances "réelles de généralisation" de votre modèle (= sur des données sur lesquelles l'apprentissage n'a pas été optimisé pour).
 - etudier l'effet de différents paramètres (nombre de neurones, rayon spectral, input scaling, leak-rate, ...)
   - sur les performances et comportements obtenus
 - produire des fichiers de sortie (texte, son, image = spectrogramme) selon le projet
+- si vous avez besoin d'apprendre sur de grands corpus (= sur un grand nombre de pas de temps) alos vous pourrez voir que l'apprentissage hors-ligne (*offline*) prendra un temps de plus en plus long (et pourra même "planter" à un moment car la matrice à inverser sera trop grande). Dans ce cas, l'apprentissage en-ligne (*online*) vous permettra d'apprendre des corpus beaucoup plus longs (grossièrement l'apprentissage sera linéaire par rapport aux nombres de pas de temps, contrairement à l'apprentissage hors-ligne). Mais selon la méthode d'apprentissage utiliser (LMS, RLS), cela nécessitera plusieurs *passes* sur le corpus (ou simplement un corpus plus grand si c'est un corpus généré).
 
 ### Choix des projets
 Le choix du projet se fait par Pull-Request de ce projet ("repository"):
@@ -23,10 +27,37 @@ https://github.com/neuronalX/student_project_ENSEIRB_robot_apprentissage_2018
 Il faut donc avoir un compte github, et faire une pull request pour éditer la liste ci-dessous (des sujets et des équipes) en ajoutant le nom de vos équipes et des membres de l'équipe.
 
 Sujets / Equipes :
-- 1. (TXT) - NOM EQUIPE - MEMBRES DE L'EQUIPE
-- 2. (MIDI) - NOM EQUIPE - MEMBRES DE L'EQUIPE
-- 3. (FREQ2WAV) - NOM EQUIPE - MEMBRES DE L'EQUIPE
-- 4. (WAV2FREQ) - NOM EQUIPE - MEMBRES DE L'EQUIPE
+- 1. (TXT) - NOM EQUIPE : MEMBRES DE L'EQUIPE
+  - Équipe 1.a : Thomas Fochesato - Jérémy Quintin - Zuzanna Muszynska
+  - Équipe 1.b : Lauren Baillot - Merlin Boyer - Effie Segas
+- 2. (MIDI) - NOM EQUIPE : MEMBRES DE L'EQUIPE
+  - Équipe 2.a : Nina docteur - Kim cottrant - Gaëlle Lannuzel
+  - Équipe 2.b : Fabien Monniot - Océane Bosseur - Vincent Leconte
+- 3. (FREQ2WAV) - NOM EQUIPE : MEMBRES DE L'EQUIPE
+  - Équipe 3.a : Hamza - Arthur - Florian
+  - Équipe 3.b : Yann Besson - Alexis Juven - Romain Alverhne
+- 4. (WAV2FREQ) - NOM EQUIPE : MEMBRES DE L'EQUIPE
+  - Équipe 4.a : Jérémy Bezamat - Thomas Saliba - Yoann
+
+### **(NEW)** Points BONUS
+
+### Rendu du projet
+Le projet sera rendu début janvier (date communiquée plus tard).
+
+Pour le rendu, vous devrez :
+- créer et m'envoyer l'adresse d'un repository github (il peut être privé, mais vous devrez m'inviter pour que je puisse y accéder)
+-
+
+## **(NEW)** FAQ
+- "Concernant le sujet de traitement de texte, nous comprenons que nous devons faire apprendre le réseau avec un texte choisi, puis en entrant une certaine lettre, nous aurons des probabilités sur quelle sera la prochaine lettre du mot, est-ce correct ?"
+
+    Concernant le sujet de traitement de texte, oui l'idée est de prédire la distribution des prochains caractères.
+
+    L'idée est de faire qqch similaire à ce qui est décrit dans ce blog : https://karpathy.github.io/2015/05/21/rnn-effectiveness/ mais en utilisant des corpus plus petit bien sûr.
+
+    Vous pouvez vous inspirer (et donc améliorer) tout en utilisant la classe ESN de https://github.com/neuronalX/FunkyReservoir le code qui se trouve ici : regardez le fichier *Word_Generator2.py* dans ce repository https://github.com/neuronalX/Reservoir-Jupyter
+
+    Une amélioration à faire est par exemple d'utiliser une *fonction de coût* (*cost function*) qui sera plus adaptée que les moindres carrés, en utilisant la *cross-entropy* qui permet de comparer deux distributions (les ditributions des prochains caractères) plutôt que de calculer la distance euclidienne entre deux vecteurs.
 
 ## Sujets proposés à choisir
 
