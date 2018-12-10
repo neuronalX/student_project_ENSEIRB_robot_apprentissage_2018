@@ -73,6 +73,13 @@ Le FAQ est mis à jour au fur et à mesure que vos questions par email. Pensez �
 
     Une amélioration à faire est par exemple d'utiliser une *fonction de coût* (*cost function*) qui sera plus adaptée que les moindres carrés, en utilisant la *cross-entropy* qui permet de comparer deux distributions (les ditributions des prochains caractères) plutôt que de calculer la distance euclidienne entre deux vecteurs.
 
+- "Nous ne comprenons pas ce qu'il faut fournir au réseau de neurones en sortie pour un entrainement supervisé ayant en entrée uniquement des fichiers MIDI. Pouvez vous nous orienter sur le sujet ? "
+
+    Comme pour le projet de prédiction/génération de texte (où il s'agit de prédire/générer le prochain caractère), il s'agit de prédire/générer la prochaine note (durée et hauteur).
+    A chaque pas de temps le réseau doit prédire la prochaine note.
+
+    Le problème peut être séparé en deux pour hauteur et la durée (prédire uniquement la hauteur, ou uniquement la durée) dans un premier temps afin de simplifier le problème. Ensuite, les deux pourront être fait ensemble (avec un seul ou deux réservoirs).
+
 ## Sujets proposés à choisir
 
 ### 1. (TXT) Prédiction et génération de texte
