@@ -3,7 +3,7 @@
 # Projets étudiants ENSEIRB option robot automne 2018
 Projet étudiant pour le cours sur l'Apprentissage Artificiel de l'ENSEIRB/ENSC de Bordeaux.
 
-Projets autour du reservoir computing avec l'utilisation de la classe ESN fournie par le repository [FunkyReservoir](https://github.com/neuronalX/FunkyReservoir).
+Projets autour du reservoir computing avec l'utilisation de la classe ESN fournie par le dépôt [reservoirpy](https://github.com/neuronalX/reservoirpy) (c'est le dépôt [FunkyReservoir](https://github.com/neuronalX/FunkyReservoir) qui a été renommé).
 
 Vous regarder ce [tutoriel jupyter notebook](https://github.com/neuronalX/Reservoir-Jupyter/blob/master/Minimal_ESN_-_FR.ipynb) pour vous aider. De façon général, vous pourrez trouver d'autres tutoriel et outils sur [ce repository](https://github.com/neuronalX/Reservoir-Jupyter).
 
@@ -46,7 +46,7 @@ Sujets / Equipes :
   - Équipe 4.a : Jérémy Bezamat - Thomas Saliba - Yoann
 
 ### **(NEW)** Points BONUS
-Si vous trouvez des *bugs* dans le code le [repository FunkyReservoir](https://github.com/neuronalX/FunkyReservoir) ou que vous proposez des améliorations par pull/request, vous obtiendrez des points bonus sur votre projet, étant donné que cela contribue à améliorer le code pour tous.
+Si vous trouvez des *bugs* dans le code le [dépôt reservoirpy](https://github.com/neuronalX/reservoirpy) ou que vous proposez des améliorations par pull/request, vous obtiendrez des points bonus sur votre projet, étant donné que cela contribue à améliorer le code pour tous.
 
 ### **(NEW)** Rendu du projet
 Le projet sera rendu début janvier (date communiquée plus tard).
@@ -69,7 +69,7 @@ Le FAQ est mis à jour au fur et à mesure que vos questions par email. Pensez �
 
     L'idée est de faire qqch similaire à ce qui est décrit dans ce blog : https://karpathy.github.io/2015/05/21/rnn-effectiveness/ mais en utilisant des corpus plus petit bien sûr.
 
-    Vous pouvez vous inspirer (et donc améliorer) tout en utilisant la classe ESN de https://github.com/neuronalX/FunkyReservoir le code qui se trouve ici : regardez le fichier *Word_Generator2.py* dans ce repository https://github.com/neuronalX/Reservoir-Jupyter
+    Vous pouvez vous inspirer (et donc améliorer) tout en utilisant la classe ESN de https://github.com/neuronalX/reservoirpy le code qui se trouve ici : regardez le fichier *Word_Generator2.py* dans ce repository https://github.com/neuronalX/Reservoir-Jupyter
 
     Une amélioration à faire est par exemple d'utiliser une *fonction de coût* (*cost function*) qui sera plus adaptée que les moindres carrés, en utilisant la *cross-entropy* qui permet de comparer deux distributions (les ditributions des prochains caractères) plutôt que de calculer la distance euclidienne entre deux vecteurs.
 
